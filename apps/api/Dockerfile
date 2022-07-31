@@ -11,7 +11,9 @@ RUN make build
 
 FROM alpine AS go-app
 
+EXPOSE 8080
+
 WORKDIR /api
 COPY --from=go-builder /api/build/ .
 # COPY --from=go-builder /api/configs ./configs
-RUN ./main
+CMD ["./main"]
