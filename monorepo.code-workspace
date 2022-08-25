@@ -10,5 +10,10 @@
     {
       "path": "apps/api"
     }
-  ]
+  ],
+  "settings": {
+    "files.exclude": {
+      "apps": true
+    }
+  }
 }
