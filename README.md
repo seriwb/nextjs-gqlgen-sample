@@ -4,12 +4,24 @@
 
 ## Components
 - Next.js(Typescript)
-- React Relay
+- SWR + graphql-request
 - gqlgen(Go)
 - air
 - [VSCode](https://code.visualstudio.com/docs/editor/multi-root-workspaces)
 - GitHub Actions
 - Dagger
+
+# start application
+
+```
+docker-compose up -d
+```
+
+
+# entrypoint
+
+- http://localhost:3000
+- http://localhost:8080
 
 
 # initialize
@@ -35,9 +47,3 @@ go run github.com/99designs/gqlgen init
 
 ## requires
 go install github.com/cosmtrek/air@latest
-
-
-# entrypoint
-
-- http://localhost:3000
-- http://localhost:8080
