@@ -1,0 +1,21 @@
+{
+  "extends": ["config:base", "group:allNonMajor"],
+  "labels": ["renovate"],
+  "timezone": "Asia/Tokyo",
+  "schedule": ["before 3am on the first day of the month"],
+  "vulnerabilityAlerts": {
+    "labels": ["security"]
+  },
+  "assigneesSampleSize": 2,
+  "reviewersSampleSize": 1,
+  "packageRules": [
+    {
+      "groupName": "web",
+      "matchPaths": ["apps/web/**"]
+    },
+    {
+      "groupName": "api",
+      "matchPaths": ["apps/api/**"]
+    }
+  ]
+}

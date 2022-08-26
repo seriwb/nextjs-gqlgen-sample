@@ -17,6 +17,9 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": "src",
+    "paths": {
+      "@/*": ["./*"]
+    },
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "incremental": true

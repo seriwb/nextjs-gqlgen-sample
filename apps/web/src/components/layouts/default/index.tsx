@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import React from 'react';
 import { Footer } from './Footer';
 import styles from './style.module.css';
 
