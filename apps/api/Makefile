@@ -5,6 +5,10 @@ COVERAGE_FILE=coverage.out
 dev:
 	air
 
+update:
+	go get -u
+	go mod tidy
+
 build:
 	go build -o ${BINARY_DIR}/main .
 
@@ -29,4 +33,4 @@ cleantest:
 	go clean -testcache
 	make test ${target}
 
-.PHONY: dev build start test testv cover clean cleantest
+.PHONY: dev update build start test testv cover clean cleantest
