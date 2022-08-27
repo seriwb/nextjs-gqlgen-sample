@@ -19,6 +19,7 @@ export const EditView = () => {
   const {
     data: item,
     mutate: setItem,
+    isValidating,
   } = useSWR<Item>('getItemFromAPI', null, {
     fallbackData: dummy,
   });
@@ -32,13 +33,17 @@ export const EditView = () => {
     handleSubmit,
     formState: { errors, isSubmitting, isSubmitSuccessful },
     reset,
-  } = useForm<Item>({ mode: 'onBlur', defaultValues: getFormData(item!) });
+  } = useForm<Item>({ mode: 'onBlur' });
 
   const isDirtyForm = (name: keyof Item): boolean => {
     return checkDirty(item![name], watch(name));
   };
   const isDirtyName = isDirtyForm('name');
   const isDirtyImage = isDirtyForm('image');
+
+  useEffect(() => {
+    reset(item);
+  }, [isValidating]);
 
   useEffect(() => {
     setSaveEnable(isDirtyName || isDirtyImage);
@@ -61,7 +66,6 @@ export const EditView = () => {
     const headers = {
       'Content-Type': 'application/json',
     };
-    console.log(data);
     const body = { image: data };
     // const res = await fetch(`/api/item/${data.id}`, {
     //   method: 'PUT',
@@ -72,14 +76,14 @@ export const EditView = () => {
     // const result: ApiResponseType<Item> = await res.json();
     // if (res.ok) {
     //   // form値を更新し、画面をリセット
-    //   reset(getFormData(result.data!));
+    //   reset(result.data!);
     //   setSaveEnable(false);
     //   setServerErrors([]); // TODO: 将来的にはエラー（Warn）が含まれることもあるはずなので、そのときはこの処理を見直する
     // } else {
     //   // エラー処理
     //   setServerErrors(result.errors);
     // }
-    setItem(data!);
+    setItem(data);
     setSaveEnable(false);
   });
 
@@ -118,16 +122,6 @@ export const EditView = () => {
       </div>
     </>
   );
-};
-
-const getFormData = (data: Item): Item => {
-  return {
-    id: data.id,
-    name: data.name,
-    image: data.image,
-    createdAt: data.createdAt,
-    updatedAt: data.updatedAt,
-  };
 };
 
 function checkDirty<T>(before: T, after: T): boolean {
