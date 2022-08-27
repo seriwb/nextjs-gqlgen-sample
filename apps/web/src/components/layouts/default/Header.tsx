@@ -25,8 +25,8 @@ export const Header = () => {
             <AiOutlineMenuUnfold title={'open sidebar'} {...iconProps} />
           )}
         </div>
-        <div>
-          <h1 className={style.title}>Next.js + gqlgen Application</h1>
+        <div className={style.title}>
+          <h1 className={style.titleText}>Next.js + gqlgen Application</h1>
         </div>
       </div>
     );

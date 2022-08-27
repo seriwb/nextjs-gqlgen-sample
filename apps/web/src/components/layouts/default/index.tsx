@@ -3,7 +3,7 @@ import useSWR from 'swr';
 import { Footer } from './Footer';
 import { Header } from './Header';
 import { Sidebar } from './Sidebar';
-import styles from './style.module.css';
+import style from './style.module.css';
 import { SIDEBAR } from '@/constants/statekeys';
 
 type Props = {
@@ -19,7 +19,7 @@ export const Layout = ({ children, title = 'Sample Application', description = '
 
   return (
     <>
-      <div className={styles.container}>
+      <div className={style.container}>
         <Head>
           <title>{title}</title>
           <link rel='icon' href='/favicon.ico' />
@@ -28,12 +28,13 @@ export const Layout = ({ children, title = 'Sample Application', description = '
           <meta name='description' content={description} />
         </Head>
 
-        <div className={styles.panel}>
+        <div className={style.panel}>
           <Sidebar isOpen={isSidebarOpen} />
-          <div className={styles.mainPanel}>
-            <div className={styles.content}>
+          <div className={style.mainPanel}>
+            <div className={style.content}>
               <Header />
-              <main className={styles.main}>{children}</main>
+              <div className={style.divider} />
+              <main className={style.main}>{children}</main>
             </div>
             <Footer />
           </div>
