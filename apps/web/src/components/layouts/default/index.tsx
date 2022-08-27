@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import { Footer } from './Footer';
+import { Header } from './Header';
+import { Sidebar } from './Sidebar';
 import styles from './style.module.css';
 
 type Props = {
@@ -19,8 +21,16 @@ export const Layout = ({ children, title = 'Sample Application', description = '
         <meta name='description' content={description} />
       </Head>
 
-      <main className={styles.main}>{children}</main>
-      <Footer />
+      <div className={styles.panel}>
+        <Sidebar />
+        <div className={styles.mainPanel}>
+          <div className={styles.content}>
+            <Header />
+            <main className={styles.main}>{children}</main>
+          </div>
+          <Footer />
+        </div>
+      </div>
     </div>
   </>
 );

@@ -1,13 +1,6 @@
 import { useMemo } from 'react';
-import styles from './style.module.css';
+import style from './style.module.css';
 
 export const Footer = () => {
-  return useMemo(
-    () => (
-      <>
-        <footer className={styles.footer}></footer>
-      </>
-    ),
-    [],
-  );
+  return useMemo(() => <footer className={style.footer}>seriwb</footer>, []);
 };
