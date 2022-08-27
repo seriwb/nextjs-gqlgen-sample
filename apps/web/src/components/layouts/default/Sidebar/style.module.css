@@ -7,6 +7,14 @@
   flex-direction: column;
 }
 
+.open {
+  composes: sidebar;
+}
+.close {
+  composes: sidebar;
+  width: 100px;
+}
+
 .content {
   flex: 1;
 }
