@@ -1,0 +1,7 @@
+.container {
+  width: 100%;
+}
+.divider {
+  composes: border-top from global;
+  /* border: 1px solid #000000; */
+}
