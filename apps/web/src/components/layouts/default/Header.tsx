@@ -14,7 +14,7 @@ export const Header = () => {
     const iconProps = { size: 60, color: '#aaa' };
     return (
       <div className={style.header}>
-        <div
+        <div className={style.menu}
           onClick={() => {
             setSidebarOpen(!isSidebarOpen);
           }}

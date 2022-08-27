@@ -43,6 +43,10 @@
   user-select: none;
 }
 
+.menu {
+  cursor: pointer;
+}
+
 .title {
   width: 100%;
   display: flex;

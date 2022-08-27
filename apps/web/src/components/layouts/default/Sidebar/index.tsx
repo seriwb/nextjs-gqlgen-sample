@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { AiOutlineOrderedList } from 'react-icons/ai';
 import style from './style.module.css';
 
 type Props = {
@@ -15,7 +16,7 @@ export const Sidebar = (props: Props) => {
     <div className={style[`${sidebar}`]}>
       <div className={style.content}>
         <div className={style.header}>
-          <h2 className={style.title}>Items</h2>
+          {props.isOpen ? <h2 className={style.title}>Items</h2> : <AiOutlineOrderedList size={40} color={'#000'} />}
         </div>
         <div className={style.divider} />
         <div className={style.items}>
