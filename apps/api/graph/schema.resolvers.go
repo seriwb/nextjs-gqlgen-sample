@@ -7,17 +7,23 @@ import (
 	"context"
 	"fmt"
 
+	"github.com/99designs/gqlgen/graphql"
 	"github.com/seriwb/nextjs-gqlgen-sample/graph/generated"
 	"github.com/seriwb/nextjs-gqlgen-sample/graph/model"
 )
 
-// CreateTodo is the resolver for the createTodo field.
-func (r *mutationResolver) CreateTodo(ctx context.Context, input model.NewTodo) (*model.Todo, error) {
+// CreateItem is the resolver for the createItem field.
+func (r *mutationResolver) CreateItem(ctx context.Context, input model.NewItem) (*model.Item, error) {
 	panic(fmt.Errorf("not implemented"))
 }
 
-// Todos is the resolver for the todos field.
-func (r *queryResolver) Todos(ctx context.Context) ([]*model.Todo, error) {
+// UploadImage is the resolver for the uploadImage field.
+func (r *mutationResolver) UploadImage(ctx context.Context, file graphql.Upload) (*graphql.Upload, error) {
+	panic(fmt.Errorf("not implemented"))
+}
+
+// Items is the resolver for the items field.
+func (r *queryResolver) Items(ctx context.Context) ([]*model.Item, error) {
 	panic(fmt.Errorf("not implemented"))
 }
 
