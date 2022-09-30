@@ -3,9 +3,9 @@ module github.com/seriwb/nextjs-gqlgen-sample
 go 1.19
 
 require (
-	github.com/99designs/gqlgen v0.17.16
+	github.com/99designs/gqlgen v0.17.20
 	github.com/joho/godotenv v1.4.0
-	github.com/vektah/gqlparser/v2 v2.5.0
+	github.com/vektah/gqlparser/v2 v2.5.1
 )
 
 require (
