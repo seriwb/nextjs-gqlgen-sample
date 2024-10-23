@@ -1,4 +1,4 @@
-FROM node:18-slim AS node-builder
+FROM node:20-slim AS node-builder
 
 EXPOSE 3000
 
@@ -15,7 +15,7 @@ RUN yarn
 CMD ["yarn", "build"]
 
 
-FROM node:18-alpine AS node-app
+FROM node:20-alpine AS node-app
 
 WORKDIR /web
 
